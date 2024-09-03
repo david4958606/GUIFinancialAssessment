@@ -1,6 +1,8 @@
 from views.fin_obj_ui import FinancialObjectiveUI
 from PyQt6.QtWidgets import QApplication
 import sys
+import utilities.ui_utils as ui_utils
+import utilities.file_utils as file_utils
 
 class FinancialObjectiveController:
     def __init__(self):
@@ -12,9 +14,10 @@ class FinancialObjectiveController:
 
     def on_save(self, selected_option):
         if selected_option:
-            print(f"Selected option: {selected_option}")
+            # ui_utils.UiUtils.show_warning("Selected option: " + selected_option)
+            file_utils.FileUtils.amend_result_file(selected_option[0])
         else:
-            print("No option selected")
+            ui_utils.UiUtils.show_warning("Please select an option")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
