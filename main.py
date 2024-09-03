@@ -1,10 +1,12 @@
 from PyQt6 import QtWidgets
-from controllers.main_ui_controller import MainUiController  # 导入控制器
+from controllers.main_ui_controller import MainUiController
+from utilities.file_utils import FileUtils
 
 if __name__ == "__main__":
+    FileUtils.new_result_file()  # Create a new result file
     app = QtWidgets.QApplication([])
 
-    controller = MainUiController()  # 创建控制器实例
-    controller.show_main_window()    # 显示主窗口
+    controller = MainUiController()
+    controller.show_main_window()    # Show the main window
 
     app.exec()
