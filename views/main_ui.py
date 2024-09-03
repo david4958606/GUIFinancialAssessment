@@ -11,7 +11,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 class Ui_Main(object):
     def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
+        Dialog.setObjectName("Your investment profile")
         Dialog.resize(640, 480)
         font = QtGui.QFont()
         font.setFamily("Arial")

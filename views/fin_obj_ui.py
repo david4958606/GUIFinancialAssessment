@@ -33,8 +33,8 @@ class FinancialObjectiveUI(QWidget):
         layout.addWidget(question)
 
         self.button_group = QButtonGroup()
-        options = ['Growing your wealth',
-                   'Generating income', 'Preserving your capital']
+        options = ['1. Growing your wealth',
+                   '2. Generating income', '3. Preserving your capital']
         for i, option in enumerate(options):
             radio = QRadioButton(option)
             radio.setFont(QFont('Arial', 12))
