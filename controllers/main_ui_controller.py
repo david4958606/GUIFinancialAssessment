@@ -17,6 +17,7 @@ class MainUiController:
         self.ui.pushButton_2.clicked.connect(UiUtils.show_file_not_found_warning)
 
     def show_main_window(self):
+        self.update_car_cka()
         self.main_window.show()
 
     def open_financial_objective(self):
@@ -24,3 +25,17 @@ class MainUiController:
         self.main_window.hide()
         self.fin_obj_controller.show()
         FileUtils.amend_result_file("Your Financial Objective: ")
+
+    def update_car_cka(self):
+        if FileUtils.judge_car():
+            UiUtils.update_label_text(self.ui.l_CAR_status, "Passed")
+            UiUtils.update_label_color(self.ui.l_CAR_status, "green")
+        else:
+            UiUtils.update_label_text(self.ui.l_CAR_status, "Failed")
+            UiUtils.update_label_color(self.ui.l_CAR_status, "red")
+        if FileUtils.judge_cka():
+            UiUtils.update_label_text(self.ui.l_CKA_status, "Passed")
+            UiUtils.update_label_color(self.ui.l_CKA_status, "green")
+        else:
+            UiUtils.update_label_text(self.ui.l_CKA_status, "Failed")
+            UiUtils.update_label_color(self.ui.l_CKA_status, "red")
