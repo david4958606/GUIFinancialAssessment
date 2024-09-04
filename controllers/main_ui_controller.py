@@ -21,5 +21,6 @@ class MainUiController:
 
     def open_financial_objective(self):
         print("MainUIController: open_financial_objective called")  # Debug print
+        self.main_window.hide()
         self.fin_obj_controller.show()
         FileUtils.amend_result_file("Your Financial Objective: ")

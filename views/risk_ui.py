@@ -5,7 +5,7 @@ from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtGui import QFont
 
 class RiskProfilingUI(QWidget):
-    save_clicked = pyqtSignal(dict)  # Signal to emit when save is clicked
+    save_clicked = pyqtSignal(list)  # Signal to emit when save is clicked
 
     def __init__(self):
         super().__init__()
@@ -13,10 +13,10 @@ class RiskProfilingUI(QWidget):
 
     def initUI(self):
         self.setWindowTitle('Risk Profiling')
-        self.setFixedSize(640, 600)  # Increased height to accommodate more questions
+        self.setFixedSize(640, 600)
 
         layout = QVBoxLayout()
-        layout.setSpacing(8)
+        layout.setSpacing(15)
         layout.setContentsMargins(30, 30, 30, 30)
 
         title = QLabel('Risk Profiling')
@@ -66,7 +66,7 @@ class RiskProfilingUI(QWidget):
 
         layout.addStretch(1)
 
-        save_button = QPushButton('Save & Next')
+        save_button = QPushButton('Save')
         save_button.setFont(QFont('Arial', 12))
         save_button.setFixedSize(100, 30)
         save_button.clicked.connect(self.on_save_clicked)
@@ -75,13 +75,13 @@ class RiskProfilingUI(QWidget):
         self.setLayout(layout)
 
     def on_save_clicked(self):
-        results = {}
+        results = []
         for i, group in enumerate(self.button_groups):
             selected = group.checkedButton()
             if selected:
-                results[f"Q{i+1}"] = selected.text()
+                results.append((self.questions[i]['text'], selected.text()))
             else:
-                results[f"Q{i+1}"] = ""
+                results.append((self.questions[i]['text'], ""))
         self.save_clicked.emit(results)
 
 if __name__ == '__main__':
