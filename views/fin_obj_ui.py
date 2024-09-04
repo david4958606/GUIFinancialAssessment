@@ -43,7 +43,7 @@ class FinancialObjectiveUI(QWidget):
 
         layout.addStretch(1)
 
-        save_button = QPushButton('Save')
+        save_button = QPushButton('Save & Next')
         save_button.setFont(QFont('Arial', 12))
         save_button.setFixedSize(100, 30)
         save_button.clicked.connect(self.on_save_clicked)
