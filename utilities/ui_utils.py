@@ -17,3 +17,11 @@ class UiUtils:
     def show_file_not_found_warning():
         if not utilities.FileUtils.check_result_file():
             UiUtils.show_warning("Result not found")
+
+    @staticmethod
+    def update_label_text(label, text):
+        label.setText(text)
+
+    @staticmethod
+    def update_label_color(label, color):
+        label.setStyleSheet(f"color: {color}")
