@@ -1,10 +1,12 @@
 from views.know_exp_ui import KnowledgeExperienceUI
 from PyQt6.QtWidgets import QApplication
 from utilities.file_utils import FileUtils
+from controllers.invest_pref_ui_controller import InvestmentPreferencesController
 import sys
 
 class KnowledgeExperienceController:
-    def __init__(self):
+    def __init__(self, app_controller):
+        self.app_controller = app_controller
         self.view = KnowledgeExperienceUI()
         self.view.save_clicked.connect(self.on_save)
 
@@ -30,6 +32,13 @@ class KnowledgeExperienceController:
                 print(f"Answer: {answer if answer else 'Not answered'}")
                 FileUtils.amend_result_file((f"Answer: {answer if answer else 'Not answered'}"))
             print()  # Add a blank line between questions for better readability
+        # open next window
+        self.open_investment_preferences()
+        self.view.close()
+
+    def open_investment_preferences(self):
+        print("KnowledgeExperienceController: open_investment_preferences called")
+        self.app_controller.show_invest_pref()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

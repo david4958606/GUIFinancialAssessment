@@ -117,8 +117,8 @@ class Ui_Main(object):
         self.l_CKA_status.setText(_translate("Dialog", "Passed"))
         self.l_pref.setText(_translate("Dialog", "Your investment preferences"))
         self.l_obj_status.setText(_translate("Dialog", "Preserving your capital"))
-        self.l_pref_status.setText(_translate("Dialog", "Preserving your capital"))
-        self.l_curr.setText(_translate("Dialog", "Your current finances"))
+        # self.l_pref_status.setText(_translate("Dialog", "Preserving your capital"))
+        # self.l_curr.setText(_translate("Dialog", "Your current finances"))
         self.pushButton.setText(_translate("Dialog", "Start Testing"))
         self.pushButton_2.setText(_translate("Dialog", "View Result"))
 

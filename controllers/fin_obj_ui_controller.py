@@ -5,11 +5,12 @@ import utilities.ui_utils as ui_utils
 import utilities.file_utils as file_utils
 from controllers.risk_ui_controller import RiskProfilingController
 
+
 class FinancialObjectiveController:
-    def __init__(self):
+    def __init__(self, app_controller):
+        self.app_controller = app_controller
         self.view = FinancialObjectiveUI()
         self.view.save_clicked.connect(self.on_save)
-        self.risk_profiling_controller = RiskProfilingController()
 
     def show(self):
         self.view.show()
@@ -23,10 +24,11 @@ class FinancialObjectiveController:
         # open next window
         self.open_risk_profiling()
         self.view.close()
-    
+
     def open_risk_profiling(self):
         print("FinancialObjectiveController: open_risk_profiling called")
-        self.risk_profiling_controller.show()
+        self.app_controller.show_risk()
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

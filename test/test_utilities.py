@@ -4,3 +4,5 @@ test_text = """Question: 1. I have a diploma or higher qualification in finance,
 
 if FileUtils.find_string_in_file(test_text):
     print("String found in file")
+
+print(FileUtils.get_financial_objective())

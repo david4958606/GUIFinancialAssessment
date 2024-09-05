@@ -59,3 +59,13 @@ class FileUtils:
                 return True
         else:
             return False
+        
+    def get_financial_objective():
+        # if one line contains "Your Financial Objective: " in the file, return the next line,exclude the first 3 characters
+        with open("result.txt", "r") as file:
+            for line in file:
+                if "Your Financial Objective: " in line:
+                    objective = next(file).strip()
+                    return objective[3::]
+                else:
+                    pass

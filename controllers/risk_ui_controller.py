@@ -5,10 +5,10 @@ from controllers.know_exp_ui_controller import KnowledgeExperienceController
 import sys
 
 class RiskProfilingController:
-    def __init__(self):
+    def __init__(self, app_controller):
+        self.app_controller = app_controller
         self.view = RiskProfilingUI()
         self.view.save_clicked.connect(self.on_save)
-        self.know_exp_controller = KnowledgeExperienceController()
 
     def show(self):
         print("RiskProfilingController: show method called")  # Debug print
@@ -30,7 +30,7 @@ class RiskProfilingController:
 
     def open_know_exp(self):
         print("RiskProfilingController: open_know_exp called")
-        self.know_exp_controller.show()
+        self.app_controller.show_know_exp()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
