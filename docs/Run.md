@@ -4,8 +4,8 @@ First start a new virtual environment and install requirements:
 
 ```bash
 python -m venv Qt
-python -m pip install -r requirements.txt
 source Qt//bin/activate # or on Windows: Qt\Scripts\activate
+python -m pip install -r requirements.txt
 ```
 
 Then run `main.py`
