@@ -18,19 +18,19 @@ class KnowledgeExperienceController:
 
     def on_save(self, results):
         print("Knowledge and Experience Results:")
-        FileUtils.amend_result_file(("Knowledge and Experience Results:"))
+        FileUtils.amend_result_file("Knowledge and Experience Results:")
         for question, answer in results:
             print(f"Question: {question}")
-            FileUtils.amend_result_file((f"Question: {question}"))
+            FileUtils.amend_result_file(f"Question: {question}")
             if isinstance(answer, list):
                 print("Answer:")
-                FileUtils.amend_result_file(("Answer:"))
+                FileUtils.amend_result_file("Answer:")
                 for item in answer:
                     print(f"  - {item}")
-                    FileUtils.amend_result_file((f"  - {item}"))
+                    FileUtils.amend_result_file(f"  - {item}")
             else:
                 print(f"Answer: {answer if answer else 'Not answered'}")
-                FileUtils.amend_result_file((f"Answer: {answer if answer else 'Not answered'}"))
+                FileUtils.amend_result_file(f"Answer: {answer if answer else 'Not answered'}")
             print()  # Add a blank line between questions for better readability
         # open next window
         self.open_investment_preferences()

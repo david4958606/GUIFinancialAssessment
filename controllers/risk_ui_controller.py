@@ -18,12 +18,12 @@ class RiskProfilingController:
 
     def on_save(self, results):
         print("Risk Profiling Results:")
-        FileUtils.amend_result_file(("Risk Profiling Results:"))
+        FileUtils.amend_result_file("Risk Profiling Results:")
         for question, answer in results:
             print(f"Question: {question}")
-            FileUtils.amend_result_file((f"Question: {question}"))
+            # FileUtils.amend_result_file(question)
             print(f"Answer: {answer if answer else 'Not answered'}")
-            FileUtils.amend_result_file((f"Answer: {answer if answer else 'Not answered'}"))
+            FileUtils.amend_result_file(f"{answer if answer else 'Not answered'}")
             print()
         self.open_know_exp()
         self.view.close()

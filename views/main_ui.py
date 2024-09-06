@@ -9,8 +9,8 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Main(object):
-    def setupUi(self, Dialog):
+class MainUi(object):
+    def setup_ui(self, Dialog):
         Dialog.setObjectName("Your investment profile")
         Dialog.resize(640, 480)
         font = QtGui.QFont()
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
-    ui = Ui_Main()
-    ui.setupUi(Dialog)
+    ui = MainUi()
+    ui.setup_ui(Dialog)
     Dialog.show()
     sys.exit(app.exec())

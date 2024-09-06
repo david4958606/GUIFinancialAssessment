@@ -21,10 +21,9 @@ class InvestmentPreferencesController:
         print("Investment Preferences Result:")
         FileUtils.amend_result_file("Investment Preferences:")
         print(f"Question: {question}")
-        FileUtils.amend_result_file(f"Question: {question}")
+        # FileUtils.amend_result_file(f"Question: {question}")
         print(f"Answer: {answer if answer else 'Not answered'}")
-        FileUtils.amend_result_file(
-            f"Answer: {answer if answer else 'Not answered'}")
+        FileUtils.amend_result_file(f"{answer if answer else 'Not answered'}")
         self.app_controller.show_main()
         self.view.close()
 

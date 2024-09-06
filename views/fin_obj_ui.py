@@ -10,9 +10,9 @@ class FinancialObjectiveUI(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setupUI()
+        self.setup_ui()
 
-    def setupUI(self):
+    def setup_ui(self):
         self.setWindowTitle('Financial Objective')
         self.setFixedSize(640, 480)
 
@@ -34,7 +34,8 @@ class FinancialObjectiveUI(QWidget):
 
         self.button_group = QButtonGroup()
         options = ['1. Growing your wealth',
-                   '2. Generating income', '3. Preserving your capital']
+                   '2. Generating income',
+                   '3. Preserving your capital']
         for i, option in enumerate(options):
             radio = QRadioButton(option)
             radio.setFont(QFont('Arial', 12))

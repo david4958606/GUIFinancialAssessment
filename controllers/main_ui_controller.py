@@ -1,5 +1,5 @@
 from PyQt6 import QtWidgets
-from views.main_ui import Ui_Main
+from views.main_ui import MainUi
 from utilities.ui_utils import UiUtils
 from utilities.file_utils import FileUtils
 
@@ -7,8 +7,8 @@ class MainUiController:
     def __init__(self, app_controller):
         self.app_controller = app_controller
         self.main_window = QtWidgets.QMainWindow()
-        self.ui = Ui_Main()
-        self.ui.setupUi(self.main_window)
+        self.ui = MainUi()
+        self.ui.setup_ui(self.main_window)
 
         # Link buttons to their respective functions
         self.ui.pushButton.clicked.connect(self.open_financial_objective)

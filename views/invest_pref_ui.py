@@ -9,9 +9,9 @@ class InvestmentPreferencesUI(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.initUI()
+        self.setup_ui()
 
-    def initUI(self):
+    def setup_ui(self):
         self.setWindowTitle('Your Investment Preferences')
         self.setFixedSize(500, 400)  # Reduced size due to fewer elements
 
@@ -27,7 +27,7 @@ class InvestmentPreferencesUI(QWidget):
         layout.addSpacerItem(QSpacerItem(20, 20))
 
         self.question = 'How often will you monitor or review your investments?'
-        self.options = ['Annually', 'Half yearly', 'Quarterly', 'Monthly']
+        self.options = ['1. Annually', '2. Half yearly', '3. Quarterly', '4. Monthly']
 
         q_label = QLabel(self.question)
         q_label.setFont(QFont('Arial', 12))

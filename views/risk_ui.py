@@ -9,9 +9,9 @@ class RiskProfilingUI(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.initUI()
+        self.setup_ui()
 
-    def initUI(self):
+    def setup_ui(self):
         self.setWindowTitle('Risk Profiling')
         self.setFixedSize(640, 600)
 
@@ -29,19 +29,31 @@ class RiskProfilingUI(QWidget):
         self.questions = [
             {
                 'text': '1. How long do you want to stay invested for?',
-                'options': ['Less than 1 year', '1 to 3 years', '3 to 7 years', 'More than 7 years']
+                'options': ['1. Less than 1 year',
+                            '2. 1 to 3 years',
+                            '3. 3 to 7 years',
+                            '4. More than 7 years']
             },
             {
                 'text': '2. Which option below describes your investment knowledge and experience?',
-                'options': ['None', 'Minimal', 'Moderate', 'Good', 'Extensive']
+                'options': ['1. None',
+                            '2. Minimal',
+                            '3. Moderate',
+                            '4. Good',
+                            '5. Extensive']
             },
             {
                 'text': '3. What level of average of potential investment loss is acceptable to you?',
-                'options': ['No', 'Low', 'Middle', 'High']
+                'options': ['1. No',
+                            '2. Low',
+                            '3. Middle',
+                            '4. High']
             },
             {
                 'text': '4. Will your financial situation change over the next 12 months?',
-                'options': ['Worse', 'No', 'Better']
+                'options': ['1. Worse',
+                            '2. No',
+                            '3. Better']
             }
         ]
 
