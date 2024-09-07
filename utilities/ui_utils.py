@@ -1,6 +1,7 @@
 import os
 from PyQt6 import QtWidgets
-import utilities.file_utils as utilities
+from utilities.file_utils import FileUtils
+from utilities.result_utils import ResultUtils
 
 
 class UiUtils:
@@ -15,7 +16,7 @@ class UiUtils:
 
     @staticmethod
     def show_file_not_found_warning():
-        if not utilities.FileUtils.check_result_file():
+        if not FileUtils.check_result_file():
             UiUtils.show_warning("Result not found")
 
     @staticmethod
@@ -25,3 +26,14 @@ class UiUtils:
     @staticmethod
     def update_label_color(label, color):
         label.setStyleSheet(f"color: {color}")
+
+    @staticmethod
+    def show_result():
+        msg_box = QtWidgets.QMessageBox()
+        msg_box.setIcon(QtWidgets.QMessageBox.Icon.Information)
+        msg_box.setWindowTitle("Information")
+        text = ResultUtils.recommend_products()
+        msg_box.setText(text)
+        msg_box.setStandardButtons(QtWidgets.QMessageBox.StandardButton.Ok)
+        msg_box.exec()
+

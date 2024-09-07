@@ -12,7 +12,7 @@ class MainUiController:
 
         # Link buttons to their respective functions
         self.ui.pushButton.clicked.connect(self.open_financial_objective)
-        self.ui.pushButton_2.clicked.connect(UiUtils.show_file_not_found_warning)
+        self.ui.pushButton_2.clicked.connect(UiUtils.show_result)
 
     def show(self):
         self.update_car_cka()
