@@ -1,4 +1,4 @@
-class ResultUtils:
+class ResultModel:
     @staticmethod
     def get_score() -> int:
         with open(r'result.txt') as file:
@@ -22,7 +22,7 @@ class ResultUtils:
 
     @staticmethod
     def recommend_products() -> str:
-        score = ResultUtils.get_score()
+        score = ResultModel.get_score()
         financial_products = {
             "R1": {"range": (0, 144), "products": "Bonds and Deposit"},
             "R2": {"range": (145, 288), "products": "Bonds,\nBonds based Funds"},
@@ -42,5 +42,5 @@ class ResultUtils:
 
     @staticmethod
     def write_recommendation(recommendation):
-        with open(r'outcome.txt', 'w') as file:
+        with open(r'../utilities/outcome.txt', 'w') as file:
             file.write(recommendation)

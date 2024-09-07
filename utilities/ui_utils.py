@@ -1,7 +1,6 @@
-import os
 from PyQt6 import QtWidgets
 from utilities.file_utils import FileUtils
-from utilities.result_utils import ResultUtils
+from models.result_model import ResultModel
 
 
 class UiUtils:
@@ -32,7 +31,7 @@ class UiUtils:
         msg_box = QtWidgets.QMessageBox()
         msg_box.setIcon(QtWidgets.QMessageBox.Icon.Information)
         msg_box.setWindowTitle("Information")
-        text = ResultUtils.recommend_products()
+        text = ResultModel.recommend_products()
         msg_box.setText(text)
         msg_box.setStandardButtons(QtWidgets.QMessageBox.StandardButton.Ok)
         msg_box.exec()
