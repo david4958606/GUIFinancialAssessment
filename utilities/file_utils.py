@@ -27,7 +27,7 @@ class FileUtils:
         # Check if the given string is present in the "result.txt" file
         with open("result.txt", "r") as file:
             return string in file.read()
-        
+
     @staticmethod
     def judge_car():
         str1 = "Question: 1. I have a diploma or higher qualification in finance, business or accounting\nAnswer: Yes"
@@ -39,7 +39,8 @@ class FileUtils:
         if not FileUtils.find_string_in_file("Knowledge and Experience Results:"):
             pass
 
-        if FileUtils.find_string_in_file(str1) or FileUtils.find_string_in_file(str2) or FileUtils.find_string_in_file(str3):
+        if FileUtils.find_string_in_file(str1) or FileUtils.find_string_in_file(str2) or FileUtils.find_string_in_file(
+                str3):
             return True
         elif FileUtils.find_string_in_file(str4):
             if not FileUtils.find_string_in_file("None of above"):
@@ -47,19 +48,22 @@ class FileUtils:
         else:
             return False
 
+    @staticmethod
     def judge_cka():
         str1 = "Question: 1. I have a diploma or higher qualification in finance, business or accounting\nAnswer: Yes"
         str2 = "Question: 2. I have a professional finance qualification\nAnswer: Yes"
         str3 = "Question: 3. In the last 10 years, I have at least 3 years of working experience in finance or accounting\nAnswer: Yes"
         str4 = "Question: 4. I have at least 3 years of working experience in the last 10 years in a finance or accounting role"
-        if FileUtils.find_string_in_file(str1) or FileUtils.find_string_in_file(str2) or FileUtils.find_string_in_file(str3):
+        if FileUtils.find_string_in_file(str1) or FileUtils.find_string_in_file(str2) or FileUtils.find_string_in_file(
+                str3):
             return True
         elif FileUtils.find_string_in_file(str4):
             if not FileUtils.find_string_in_file("None of above"):
                 return True
         else:
             return False
-        
+
+    @staticmethod
     def get_financial_objective():
         # if one line contains "Your Financial Objective: " in the file, return the next line,exclude the first 3 characters
         with open("result.txt", "r") as file:
