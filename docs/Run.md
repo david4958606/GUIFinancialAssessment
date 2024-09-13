@@ -1,6 +1,6 @@
 # How to run this
 
-First start a new virtual environment and install requirements:
+First start a new virtual environment and install requirements, python 3.11 is needed:
 
 ```bash
 python -m venv Qt
